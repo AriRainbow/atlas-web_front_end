@@ -1,0 +1,169 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* Set foreground color for the body */
+body {
+    color: #161616;
+}
+
+/* Set foreground color for all anchor elements */
+a {
+    color: #161616;
+}
+
+/* Set display to none for elements with the class visually-hidden */
+.visually-hidden {
+    display: none;
+}
+
+/* Set foreground color for elements with the class card-category */
+.card-category {
+    color: #D73953;
+}
+
+/* Set foreground color for elements with the class section-tagline */
+.section-tagline {
+    color: #D73953;
+}
+
+/* Define custom properties for colors */
+:root {
+    --color-primary: #d73953;
+    --color-black: #090909;
+    --color-white: #ffffff;
+    --color-light-grey: #f3f3f3;
+    --color-dark-grey: #353535;
+    --text-color: var(--color-black);
+}
+
+/* Reset the color for body and anchor elements using the text-color variable */
+body {
+    color: var(--text-color);
+}
+
+a {
+    color: var(--text-color);
+}
+
+/* Reset the color for section-tagline and card-category using the color-primary variable */
+.section-tagline, 
+.card-category {
+    color: var(--color-primary);
+}
+
+:root {
+    --font-family-base: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-family-title: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    font-family: var(--font-family-base);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-title);
+}
+
+:root {
+    --font-size-small: 1.2rem;
+    --font-size-medium: 1.6rem;
+    --font-size-large: 1.8rem;
+    --font-size-x-large: 2.3rem;
+    --font-size-xx-large: 4.8rem;
+}
+
+html {
+    font-size: 62.5%; /* This makes 1rem = 10px if the default is 16px */
+}
+
+body {
+    font-size: var(--font-size-medium); /* Setting the body's font size to medium */
+}
+
+:root {
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+}
+
+body {
+    font-weight: var(--font-weight-regular);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: var(--font-weight-bold);
+}
+
+:root {
+    --font-family-base: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-family-title: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    font-family: var(--font-family-base);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-title);
+}
+
+:root {
+    --line-height-small: 1.2;
+    --line-height-base: 1.5;
+    --line-height-big: 1.8;
+}
+
+body {
+    line-height: var(--line-height-base);
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    --section-header-align: center;
+}
+
+.section-header {
+    text-align: var(--section-header-align);
+}
+
+:root {
+    --section-tagline-transform: uppercase;
+}
+
+.section-tagline {
+    font-family: var(--font-family-title);
+    text-transform: var(--section-tagline-transform);
+    font-weight: var(--font-weight-bold);
+}
+
+:root {
+    --section-title-margin: 0;
+    --section-title-color: var(--color-black);
+}
+
+.section-title {
+    font-family: var(--font-family-title);
+    font-size: var(--font-size-xx-large);
+    font-weight: var(--font-weight-bold);
+    margin: var(--section-title-margin);
+    color: var(--section-title-color);
+}
+
+a {
+    text-decoration: none; /* Ensure only links containing a hyperlink are targeted */
+}
+
+a:visited {
+    font-style: italic; /* Italicize visited links */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline links on hover */
+}
+
+a:active {
+    background-color: var(--color-light-grey); /* Set background color for active state */
+}
