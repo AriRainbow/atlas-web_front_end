@@ -152,7 +152,7 @@ a {
     color: var(--section-title-color);
 }
 
-a {
+a:link {
     text-decoration: none; /* Ensure only links containing a hyperlink are targeted */
 }
 
