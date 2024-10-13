@@ -570,16 +570,16 @@ a:active {
     float: right;
 }
 
-/* Nav class styling */
-nav {
+/* .Nav class styling */
+.nav {
     margin: 0;
     padding: 0;
     list-style: none;
     text-align: center;
 }
 
-/* Nav-item class in nav class */
-nav .nav-item {
+/* .Nav-item class in nav class */
+.nav .nav-item {
     font-family: var(--nav-item-font-family);
     font-weight: var(--nav-item-font-weight);
     font-size: var(--nav-item-font-size);
@@ -588,13 +588,13 @@ nav .nav-item {
     margin: var(--nav-item-margin);
 }
 
-/* Nav-link class in nav class */
-nav .nav-link {
+/* .Nav-link class in nav class */
+.nav .nav-link {
     display: block;
     padding: 0.5rem 1rem; /* Half of the root element for top/bottom, equal to the root element for left/right */
 }
 
-/* Nav-link hover state */
-nav .nav-link:hover {
+/* .Nav-link hover state */
+.nav .nav-link:hover {
     color: var(--nav-item-link-hover);
 }
