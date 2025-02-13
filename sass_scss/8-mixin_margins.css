@@ -1,0 +1,12 @@
+/* 8-mixin_margins */
+body {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+div {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+/*# sourceMappingURL=8-mixin_margins.css.map */
