@@ -1,0 +1,18 @@
+/* 9-extend_list */
+
+// Base style for .info
+.info {
+  font-size: 12px;
+}
+
+// Extend .info for .success and apply text color
+.success {
+  @extend .info;
+  color: #00FF00;
+}
+
+// Extend .info for .warning and apply text color
+.warning {
+  @extend .info;
+  color: #FF0000;
+}
