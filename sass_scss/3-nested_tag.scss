@@ -1,0 +1,13 @@
+/* 3-nested_tag.scss */
+
+// Remove margin and padding from body
+body {
+  margin: 0px;
+  padding: 0px;
+
+  // Target all p tags inside body
+  p {
+    margin: 10px;
+  }
+}
+
