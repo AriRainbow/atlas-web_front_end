@@ -1,0 +1,19 @@
+/* 2-color_variables */
+
+// Declare two Sass variables
+$primary-color: #3D3D3D;   // Text color
+$secondary-color: #6D6D6D; // Background color
+
+// Assign the colors to the body and p tags
+body {
+  color: $primary-color;
+  background-color: $secondary-color;
+}
+
+p {
+  color: $primary-color;
+}
+
+h2 {
+  background-color: $secondary-color;
+}
