@@ -1,0 +1,11 @@
+/* 5-nested_child */
+
+// Set text color for all elements inside body
+body {
+  color: #3D3D3D;
+
+  // Set text color for elements with class .red that are direct children of body
+  > .red {
+    color: #FF0000;
+  }
+}
