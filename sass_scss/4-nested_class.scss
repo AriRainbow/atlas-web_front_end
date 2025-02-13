@@ -1,0 +1,11 @@
+/* 4-nested_class */
+
+// Set text color for all elements inside body
+body {
+  color: #3D3D3D;
+
+  // Set text color for elements with class .red inside body
+  .red {
+    color: #FF0000;
+  }
+}
