@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Task 13</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <script>
+      const baseUrl = "http://localhost:3000";
+
+      function addPostRow(data) {
+        const p = $("<p></p>").attr("id", "row-" + data.id);
+
+        // Create delete span
+        const deleteSpan = $("<span></span>")
+          .text("(delete) ")
+          .css("color", "red")
+          .css("cursor", "pointer")
+          .on("click", () => deletePost(data.id));
+
+        // Create post info span
+        const infoSpan = $("<span></span>").text(
+          `Post ${data.id} - ${data.title} by ${data.author}`
+        );
+
+        p.append(deleteSpan);
+        p.append(infoSpan);
+        $("body").append(p);
+      }
+
+      function deletePost(id) {
+        $.ajax({
+          url: `${baseUrl}/posts/${id}`,
+          type: "DELETE",
+          success: () => {
+            $(`#row-${id}`).remove();
+          },
+          error: () => {
+            alert("Post was not deleted");
+          },
+        });
+      }
+
+      function listPosts() {
+        $.get(`${baseUrl}/posts`, function (data) {
+          for (const post of data) {
+            addPostRow(post);
+          }
+        });
+      }
+
+      function buildForm() {
+        const form = $("<form></form>");
+        const div1 = $("<div></div>");
+        const label1 = $('<label for="author">Author</label>');
+        const input1 = $('<input type="text" id="author">');
+        div1.append(label1, input1);
+
+        const div2 = $("<div></div>");
+        const label2 = $('<label for="title">Title</label>');
+        const textarea = $('<textarea id="title"></textarea>');
+        div2.append(label2, textarea);
+
+        const submit = $('<input type="submit" value="Submit">');
+
+        form.append(div1, div2, submit);
+        $("body").append(form);
+
+        form.on("submit", function (e) {
+          e.preventDefault();
+          sendForm();
+        });
+      }
+
+      function sendForm() {
+        const author = $("#author").val();
+        const title = $("#title").val();
+        const data = { title, author };
+
+        $("form").after("About to send the query to the API");
+
+        $.post(`${baseUrl}/posts`, data)
+          .done((response) => addPostRow(response))
+          .fail(() => alert("Error sending the POST query"));
+      }
+
+      $(document).ready(() => {
+        listPosts();
+        buildForm();
+      });
+    </script>
+  </body>
+</html>

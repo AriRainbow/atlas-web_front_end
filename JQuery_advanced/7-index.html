@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Task 7</title>
+  <!-- Load full jQuery (not slim) to enable AJAX -->
+  <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-6G2J+NpF5mMog4swkGnFQCO3XLzeClhZtvkkXzN1P3M="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <script type="application/javascript">
+    function createSearchForm() {
+      const inputText = $('<input type="text">');
+      const inputSubmit = $('<input type="submit">');
+      const ulList = $('<ul>');
+
+      // Append all to body
+      $('body').append(inputText, inputSubmit, ulList);
+
+      // Handle form submit
+      inputSubmit.click(function (event) {
+        event.preventDefault();
+        const searchValue = $('input[type="text"]').val();
+        queryWikipedia(searchValue);
+      });
+    }
+
+    function addNewArticle(id, title, snippet) {
+      const li = $('<li>');
+      const paragraph1 = $('<p>').append(
+        $('<span>').text(`${id} - `),
+        $('<b>').text(title)
+      );
+      const paragraph2 = $('<p>').html(snippet); // Use .html to render actual HTML from Wikipedia
+
+      li.append(paragraph1, paragraph2);
+      $('ul').append(li);
+    }
+
+    function queryWikipedia(search) {
+      const url = 'https://en.wikipedia.org/w/api.php';
+      const data = {
+        action: 'query',
+        list: 'search',
+        srsearch: search,
+        format: 'json',
+        origin: '*' // Required for CORS
+      };
+
+      $.ajax({
+        url: url,
+        data: data,
+        dataType: 'json',
+        success: function (response) {
+          $('ul').empty(); // Clear previous results
+          const results = response.query.search;
+          results.forEach(result => {
+            addNewArticle(result.pageid, result.title, result.snippet);
+          });
+        },
+        error: function () {
+          alert('Failed to fetch data from Wikipedia.');
+        }
+      });
+    }
+
+    // Initialize the form on page load
+    createSearchForm();
+  </script>
+</body>
+
+</html>
