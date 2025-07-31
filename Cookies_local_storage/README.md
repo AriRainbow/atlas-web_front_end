@@ -1,14 +1,13 @@
 Cookies and Local Storage (Max's Version)
-
 --
 
 0. README.md
-
+--
 Write a good, substantial README.md!
 
---
 
 1. Create basic cookie
+--
 
 Install your development environment:
 
@@ -29,18 +28,19 @@ Create a function showCookies:
 It should create a DOM element p
 It should set the inner html with Cookies: and the value of the cookie
 It should append the paragraph at the bottom of the page
---
+
 
 2. Create cookie with expiration date and specific path
+--
 
 In a file 1-index.html:
 
 Reuse the code of the previous task
 Modify the way you are setting cookies to expire in 10 days
 
---
 
 3. Read cookie
+--
 
 In a file 2-index.html:
 
@@ -55,9 +55,9 @@ Modify the function showCookies:
 
 It should display the paragraph Email: EMAIL - Firstname: FIRSTNAME
 
---
 
 4. Delete cookie and mini application
+--
 
 in a file 3-index.html, reuse your code from the previous task
 
@@ -87,9 +87,9 @@ It should display Welcome FIRSTNAME (logout)
 The link font should be display in normal weight, italic, and 10px to the right of the message
 On click, call the function deleteCookiesAndShowForm, hide the welcome message, and show the form
 
---
 
 5. Use js-cookie
+--
 
 Reusing the code from the previous task:
 
@@ -98,9 +98,9 @@ Delete the getCookie function and use js-cookie get function instead
 Use js-cookie remove function within deleteCookiesAndShowForm function
 Use js-cookie set function within setCookiesAndShowWelcomeMessage function (new function that sets cookies and calls showWelcomeMessageOrForm)
 
---
 
 6. Local storage
+--
 
 Let’s build a basic shopping cart in a new file. Setup your files with the following:
 
@@ -122,9 +122,9 @@ Create a function displayCart:
 If the local storage does not contain any item, this function does not do anything
 If the local storage contains any item, it should display the message You previously had X items in your cart in a p element that you can append to the body
 
---
 
 7. Session storage
+--
 
 Reusing the code from the previous task, replace the use of local storage by session storage
 
@@ -134,9 +134,9 @@ At this time, you should be able to see the list of available items
 If you click on two of them and refresh the browser, you should see the message You previously had 2 items in your cart
 If you open a new tab, you should not see any message
 
---
 
 8. Advanced use of web storage
+--
 
 In a new file, let’s build a more advanced cart system using Session Storage. Setup your files with the following:
 
